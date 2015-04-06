@@ -13,6 +13,7 @@ class AppointmentsController < ApplicationController
   def edit
     @user = current_user
     @appointment = Appointment.find(params[:id])
+    @doctor = @appointment.doctor
   end
 
   def create
