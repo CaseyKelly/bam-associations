@@ -24,14 +24,14 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     if @appointment.save
-      redirect_to appointments_path
+      redirect_to appointments_path, notice: "Appointment Created with #{@appointment.doctor.name}"
     else render :new
     end
   end
 
   def update
     @appointment = Appointment.find(params[:id])
-    if @appointment.update_attributes(appointment_params)
+    if @appointment.update(appointment_params)
       redirect_to root_path, notice: "Appointment Updated with #{@appointment.doctor.name}"
     else render :index
     end

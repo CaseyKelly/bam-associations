@@ -4,8 +4,8 @@
 <p><%= f.label :date %>
 <%= f.date_field :date %></p>
 <%= f.hidden_field :user_id, :value => @user.id %>
-<p><%= f.label 'Doctor' %>
-  <%= f.collection_select(:doctor_id, Doctor.all, :id, :name) %>
+<p><%= f.label :doctor_id %>
+  <%= f.collection_select :doctor_id, Doctor.all, :id, :name, {:name => 'Doctor'} %>
 </p>
 
 <p><%= f.submit %></p>
