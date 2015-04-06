@@ -2,10 +2,10 @@
 
 <p><%= form_for [@user, @appointment] do |f| %>
 <p><%= f.label :date %>
-<%= f.date_select :day %></p>
+<%= f.date_field :date %></p>
 <%= f.hidden_field :user_id, :value => @user.id %>
 <p><%= f.label 'Doctor' %>
-  <%= select_tag 'Doctor', options_for_select(@doctors.collect {|doc| [doc.name, doc.id]} ) %>
+  <%= f.collection_select(:doctor_id, Doctor.all, :id, :name) %>
 </p>
 
 <p><%= f.submit %></p>

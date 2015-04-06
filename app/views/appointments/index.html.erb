@@ -12,7 +12,7 @@
   <tr>
     <% @appointments.each do |appointment| %>
     <td><%= appointment.doctor.name %></td>
-    <td><%= appointment.day %></td>
+    <td><%= appointment.date %></td>
     <td> <%= link_to "Edit", edit_appointment_path(appointment) %></td>
     <% end %>
   </tr>

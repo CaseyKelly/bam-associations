@@ -24,7 +24,7 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     if @appointment.save
-      redirect_to root_path
+      redirect_to appointments_path
     else render :new
     end
   end
@@ -32,7 +32,7 @@ class AppointmentsController < ApplicationController
   def update
     @appointment = Appointment.find(params[:id])
     if @appointment.update_attributes(appointment_params)
-      redirect_to root_path
+      redirect_to root_path, notice: "Appointment Updated with #{@appointment.doctor.name}"
     else render :index
     end
   end
