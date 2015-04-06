@@ -4,19 +4,21 @@ class AppointmentsController < ApplicationController
     if current_user
       @appointments = @user.appointments
     else
-      redirect_to 
+      redirect_to
     end
   end
 
   def new
     @user = current_user
     @appointment = Appointment.new
+    @doctors = Doctor.all
   end
 
   def edit
     @user = current_user
     @appointment = Appointment.find(params[:id])
     @doctor = @appointment.doctor
+    @doctors = Doctor.all
   end
 
   def create

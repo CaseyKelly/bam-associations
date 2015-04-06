@@ -4,8 +4,9 @@
 <p><%= f.label :date %>
 <%= f.date_select :day %></p>
 <%= f.hidden_field :user_id, :value => @user.id %>
-<p><%= f.label :doctor %>
-  <%= f.collection_select(:doctor_id, Doctor.all, :id, :name) %></p>
+<p><%= f.label 'Doctor' %>
+  <%= select_tag 'Doctor', options_for_select(@doctors.collect {|doc| [doc.name, doc.id]} ) %>
+</p>
 
 <p><%= f.submit %></p>
 <% end %></p>
