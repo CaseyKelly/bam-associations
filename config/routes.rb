@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   post 'sign-in', to: 'sessions#create'
 
   resources :appointments, only: [:index]
+  
+  resources :users do
+    resources :appointments
+  end
 
 end

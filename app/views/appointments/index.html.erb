@@ -1,5 +1,7 @@
 <h1>Appointments for <%= @user.username %></h1>
 
+<p><%= link_to 'Create New Appointment', new_user_appointment_path(@user) %></p>
+
 <table>
   <th>
     <td>Doctor</td>
