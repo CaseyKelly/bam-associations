@@ -1,12 +1,15 @@
 class AppointmentsController < ApplicationController
   def index
     @user = current_user
-    @appointments = @user.appointments
+    if current_user
+      @appointments = @user.appointments
+    else
+      redirect_to 
+    end
   end
 
   def new
     @user = current_user
-    @doctor = Doctor.find(params[:doctor_id])
     @appointment = Appointment.new
   end
 

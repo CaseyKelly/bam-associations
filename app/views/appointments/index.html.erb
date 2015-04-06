@@ -1,7 +1,7 @@
 <h1>Upcoming Appointments for <%= @user.username %>: <%= @user.appointments.count %></h1>
 <h3>Doctors Assigned to <%= @user.username %>: <%= @user.doctors.count %></h3>
 
-<p><%= link_to 'Create New Appointment', new_user_appointment_path(@user) %></p>
+<p><%= link_to 'New Appointment', new_user_appointment_path(@user) %></p>
 
 <table>
   <th>

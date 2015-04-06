@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'appointments#index'
+  root 'welcome#index'
 
   get 'sign-up', to: 'registrations#new'
   post 'sign-up', to: 'registrations#create'
