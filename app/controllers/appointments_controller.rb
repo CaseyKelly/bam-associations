@@ -5,7 +5,14 @@ class AppointmentsController < ApplicationController
   end
 
   def new
+    @user = current_user
+    @doctor = Doctor.find(params[:doctor_id])
     @appointment = Appointment.new
+  end
+
+  def edit
+    @user = current_user
+    @appointment = Appointment.find(params[:id])
   end
 
   def create
@@ -13,6 +20,14 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       redirect_to root_path
     else render :new
+    end
+  end
+
+  def update
+    @appointment = Appointment.find(params[:id])
+    if @appointment.update_attributes(appointment_params)
+      redirect_to root_path
+    else render :index
     end
   end
 
