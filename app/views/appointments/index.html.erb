@@ -1,0 +1,15 @@
+<h1>Appointments for <%= @user.username %></h1>
+
+<table>
+  <th>
+    <td>Doctor</td>
+    <td>Date</td>
+  </th>
+
+  <tr>
+    <% @appointments.each do |appointment| %>
+    <td><%= appointment.doctor.name %></td>
+    <td><%= appointment.day %></td>
+    <% end %>
+  </tr>
+</table>
